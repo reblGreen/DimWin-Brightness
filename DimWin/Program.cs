@@ -23,6 +23,7 @@
  */
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -36,16 +37,21 @@ namespace DimWin
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             if (Mutex.WaitOne(TimeSpan.Zero, true))
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Brightness());
+                Application.Run(new Brightness(args));
             }
             else
             {
+                if (Debugger.IsAttached)
+                {
+                    MessageBox.Show("Applicatiton already running");
+                }
+
                 Application.Exit();
             }
         }

@@ -52,6 +52,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -61,6 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\BasicWindow.cs" />
+    <Compile Include="DimWinInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\Brightness.cs">
       <SubType>Form</SubType>
     </Compile>

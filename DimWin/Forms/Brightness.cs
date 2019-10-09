@@ -36,7 +36,7 @@ namespace DimWin
         Timer OntopTimer;
         bool HasChanged;
 
-        public Brightness()
+        public Brightness(string[] args)
         {
             InitializeComponent();
 
@@ -47,6 +47,11 @@ namespace DimWin
             SetupSlidersForm();
 
             SetupTrayIcon();
+
+            if (args != null && args.Length > 0 && args[0].ToLowerInvariant() == "runonstartup")
+            {
+                Startup.AddToStartup();
+            }
         }
 
         ~Brightness()
