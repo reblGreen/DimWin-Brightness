@@ -48,9 +48,9 @@ namespace DimWin
 
             SetupTrayIcon();
 
-            if (args != null && args.Length > 0 && args[0].ToLowerInvariant() == "runonstartup")
+            if (!Startup.CheckStartup())
             {
-                Startup.AddToStartup();
+                MessageBox.Show("If you would like to start DimWin Brightness when Windows starts you must check this item in the right click menu.", "DimWin Brightness", MessageBoxButtons.OK);
             }
         }
 

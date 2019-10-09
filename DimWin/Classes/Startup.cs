@@ -30,24 +30,27 @@ namespace DimWin
 {
     class Startup
     {
-        const string ApplicationName = "DimWin Brightness";
+        const string ApplicationName = "reblGreen DimWin Brightness";
 
         public static void AddToStartup()
         {
             string path = Helpers.ToShortPathName(Assembly.GetExecutingAssembly().Location);
-
             RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-
+            
             if (key.GetValue(ApplicationName) == null || (string)key.GetValue(ApplicationName) != path)
+            {
                 key.SetValue(ApplicationName, path);
+            }
         }
 
         public static void RemoveFromStartup()
         {
             RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-
+            
             if (key.GetValue(ApplicationName) != null)
+            {
                 key.DeleteValue(ApplicationName);
+            }
         }
 
         public static bool CheckStartup()
@@ -57,7 +60,10 @@ namespace DimWin
             RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
             if (key.GetValue(ApplicationName) != null && (string)key.GetValue(ApplicationName) == path)
+            {
                 return true;
+            }
+
             return false;
         }
     }

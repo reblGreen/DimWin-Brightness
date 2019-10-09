@@ -14,7 +14,7 @@ namespace DimWin
         public override void Commit(IDictionary savedState)
         {
             base.Commit(savedState);
-            Process.Start(Context.Parameters["AssemblyPath"], "runonstartup");
+            Process.Start(Context.Parameters["AssemblyPath"]);
         }
     }
 }
