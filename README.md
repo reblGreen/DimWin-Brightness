@@ -12,3 +12,22 @@ Sudo Brightness uses `System.Windows.Forms.NativeWindow` and some nifty low-leve
 
 Although Sudo Brightness will work with desktop computers, physical external monitor brightness can not be adjusted using DimWin. It only works on laptop displays. 
 
+## Screenshot ##
+
+![reblGreen DimWin Brightness screenshot](/screenshot.png?raw=true)
+
+## Licence ##
+
+MIT. (Please see [licence file](/LICENCE.md) for more information).
+
+### Contribution guidelines ###
+
+* Fork [reblGreen DimWin Brightness](https://github.com/reblGreen/DimWin-Brightness), make some changes, make a pull request. Simple!
+* Code will be reviewed when a pull request is made.
+
+### Support ###
+
+If you require any help and support for this application please contact us via the following methods.
+
+* reblGreen DimWin Brightness repo owner via message or the [issues board](https://github.com/reblGreen/DimWin-Brightness/issues).
+* Or contact us via our website at [reblgreen.com](https://reblgreen.com/).
