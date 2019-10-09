@@ -90,11 +90,25 @@ namespace DimWin
             var left = workingArea.Right - (Width + 5);
             var top = workingArea.Bottom - (Height + 5);
 
-            OverlaySlider.Value = Math.Min(Math.Max(Properties.Settings.Default.Brightness, 1), 100);
-            BrightnessSlider.Value = Math.Max(Helpers.Brightness, 1);
+            try
+            {
+                SetContrast(Properties.Settings.Default.Brightness);
+                OverlaySliderValueChanged(null, null);
+            }
+            catch
+            {
+                OverlaySlider.Value = OverlaySlider.Maximum;
+            }
 
-            OverlaySliderValueChanged(null, null);
-            BrightnessSliderValueChanged(null, null);
+            try
+            {
+                SetBrightness(Helpers.Brightness);
+                BrightnessSliderValueChanged(null, null);
+            }
+            catch
+            {
+                BrightnessSlider.Value = BrightnessSlider.Maximum;
+            }
 
             OverlaySlider.LostFocus += LoseFocus;
             BrightnessSlider.LostFocus += LoseFocus;
@@ -188,13 +202,13 @@ namespace DimWin
 
         void SetBrightness(int value)
         {
-            value = Math.Min(Math.Max(value, 1), 100);
+            value = Math.Min(Math.Max(value, BrightnessSlider.Minimum), BrightnessSlider.Maximum);
             BrightnessSlider.Value = value;
         }
 
         void SetContrast(int value)
         {
-            value = Math.Min(Math.Max(value, 1), 100);
+            value = Math.Min(Math.Max(value, BrightnessSlider.Minimum), BrightnessSlider.Maximum);
             OverlaySlider.Value = value;
         }
 
