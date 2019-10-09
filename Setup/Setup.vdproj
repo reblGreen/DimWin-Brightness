@@ -136,7 +136,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v2.0"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.0"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=671728"
                 }
@@ -232,7 +232,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:DimWin Brightness"
         "ProductCode" = "8:{C7C8C56C-8394-4C53-B8A6-A4D7F2597884}"
-        "PackageCode" = "8:{1DA3C6C9-81CD-411C-A18F-D2B9239635F6}"
+        "PackageCode" = "8:{985ECC4C-6D7A-4E6F-ADC8-4ED52B711132}"
         "UpgradeCode" = "8:{7323054E-2E3B-476F-8AA3-0B1F1AB320FF}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
