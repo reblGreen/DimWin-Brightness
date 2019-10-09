@@ -20,12 +20,12 @@ Although Sudo Brightness will work with desktop computers, physical external mon
 
 MIT. (Please see [licence file](/LICENCE.md) for more information).
 
-### Contribution guidelines ###
+## Contribution guidelines ##
 
 * Fork [reblGreen DimWin Brightness](https://github.com/reblGreen/DimWin-Brightness), make some changes, make a pull request. Simple!
 * Code will be reviewed when a pull request is made.
 
-### Support ###
+## Support ##
 
 If you require any help and support for this application please contact us via the following methods.
 
