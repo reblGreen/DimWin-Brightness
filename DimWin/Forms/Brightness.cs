@@ -91,10 +91,6 @@ namespace DimWin
 
         void SetupSlidersForm()
         {
-            var workingArea = Screen.PrimaryScreen.WorkingArea;
-            var left = workingArea.Right - (Width + 5);
-            var top = workingArea.Bottom - (Height + 5);
-
             try
             {
                 SetContrast(Properties.Settings.Default.Brightness);
@@ -127,7 +123,7 @@ namespace DimWin
             BrightnessSlider.ValueChanged += BrightnessSliderValueChanged;
 
             StartPosition = FormStartPosition.Manual;
-            Location = new Point(left, top);
+            SetLocation();
             Visible = false;
 
             if (Helpers.IsVistaOrHigher() && Native.DwmIsCompositionEnabled())
@@ -181,6 +177,7 @@ namespace DimWin
 
             TrayIcon.Click += (object sender, EventArgs e) =>
             {
+                SetLocation();
                 Visible = true;
                 Activate();
                 OverlaySlider.Focus();
@@ -188,6 +185,14 @@ namespace DimWin
             
             TrayIcon.ContextMenu = TrayMenu;
             TrayIcon.Visible = true;
+        }
+
+        private void SetLocation()
+        {
+            var workingArea = Screen.PrimaryScreen.WorkingArea;
+            var left = workingArea.Right - (Width + 5);
+            var top = workingArea.Bottom - (Height + 5);
+            Location = new Point(left, top);
         }
 
         private void RunOnStartup(object sender, EventArgs e)
